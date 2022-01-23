@@ -1,0 +1,172 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  font-family: 'Arial', sans-serif;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  user-select: none;
+}
+#app {
+  position: relative;
+  width: 500px;
+  height: 300px;
+}
+.button {
+  width: 120px;
+  height: 50px;
+  padding: 0;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  transform: perspective(1000px) translate3d(0,0,0);
+  overflow: hidden;
+}
+.result {
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  min-width: 300px;
+  margin-bottom: 20px;
+  color: #ce98d3;
+  font-size: 26px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+.result__value--win {
+  color: #98d39a;
+}
+.result__value--lose {
+  color: #e96c6e;
+}
+.result__value--draw {
+  color: #e2db71;
+}
+.title {
+  margin-top: 0;
+  margin-bottom: 40px;
+  color: #333;
+  font-size: 36px;
+}
+.start {
+  position: absolute;
+  width: 100%;
+}
+.start__button {
+  position: absolute;
+  width: 100%;
+  margin-top: 20px;
+  background-color: #98d39a;
+  animation: shake 2s ease-in-out infinite;
+}
+.start__button.start__button--active {
+  animation: started 0.8s ease-in-out;
+}
+.game {
+  position: relative;
+  display: none;
+  transform:
+    translate3d(0,0,-100000px)
+    perspective(1000px)
+  ;
+}
+.game--started {
+  animation: showGame 0.6s ease;
+  transform: none;
+}
+.scores {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+.scores__valueArea {
+  font-size: 22px;
+}
+.scores__valueArea--player {
+  color: #98d39a;
+}
+.scores__valueArea--ai {
+  color: #e96c6e;
+}
+.scores__valueArea + .scores__valueArea {
+  margin-left: 40px;
+}
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.actions__button {
+  background-color: #99c3da;
+}
+.actions__button--reset {
+  width: 100%;
+  margin-top: 20px;
+  background-color: #df9696;
+}
+.actions__button--reset--endGame {
+  animation: heartBeat 1s ease-in-out infinite;
+}
+.actions__button:hover {
+  transform: perspective(1000px) translate3d(0,0, 70px);
+}
+.actions__button:active {
+  transform: perspective(1000px) translate3d(0,0,-70px);
+}
+.actions__button.actions__button--disabled {
+  background-color: #dbdbdb;
+  transform: none;
+  cursor: default;
+}
+@keyframes shake {
+  0% {
+    transform: rotate(-1deg);
+  }
+  50% {
+    transform: rotate(1deg);
+  }
+  100% {
+    transform: rotate(-1deg);
+  }
+}
+
+@keyframes started {
+  50% {
+    transform: translateX(-30%);
+  }
+  100% {
+    transform: translateX(100vw);
+  }
+}
+@keyframes showGame {
+  0% {
+    transform: perspective(1000px) translate3d(0,0,-100000px);
+  }
+  100% {
+    transform: perspective(1000px) translate3d(0,0,0);
+  }
+}
+@keyframes heartBeat {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

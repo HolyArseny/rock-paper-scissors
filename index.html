@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./assets/style.css">
+  <title>Rock paper scissors game</title>
+</head>
+<body>
+  <main id="app">
+    <section class="result">
+      <span id="textResult" class="result__value"></span>
+    </section>
+    <h1 class="title">Rock Paper Scissors Game</h1>
+    <div class="start">
+      <button id="start" class="button start__button">Start</button>
+    </div>
+    <div id="game" class="game">
+      <section class="scores">
+        <div class="scores__valueArea scores__valueArea--player">
+          <span class="scores__title">Player score:</span>
+          <span id="player-score" class="scores__value">0</span>
+        </div>
+        <div class="scores__valueArea scores__valueArea--ai">
+          <span class="scores__title">AI score:</span>
+          <span id="ai-score" class="scores__value">0</span>
+        </div>
+      </section>
+      <section class="actions">
+        <button id="rock" class="button actions__button">Rock</button>
+        <button id="paper" class="button actions__button">Paper</button>
+        <button id="scissors" class="button actions__button">Scissors</button>
+        <button
+          id="reset"
+          class="button actions__button actions__button--reset">Reset Game</button>
+      </section>
+    </div>
+  </main>
+  <script src="index.js" type="module"></script>
+</body>
+</html>

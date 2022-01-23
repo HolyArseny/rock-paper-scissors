@@ -1,0 +1,11 @@
+{
+  "name": "rock-paper-scissors",
+  "version": "0.0.1",
+  "description": "Rock paper scissors game",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Malinkovich Arseny",
+  "license": "ISC"
+}
